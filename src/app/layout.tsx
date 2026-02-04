@@ -6,6 +6,8 @@ export default function Layout({ children }: { children: ReactNode }) {
     // <h1>hello</h1>
     <MasterLayout>
       {children}
+
+    
     </MasterLayout>
   );
 }

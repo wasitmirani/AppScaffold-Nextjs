@@ -38,15 +38,14 @@ export default class SidebarMenu {
     getMenuList(): any[] {
         return [
             this.setHeadingMenu('Analytics'),
-            this.setMultiMenu('Dashboards', 'ri-home-smile-line', 'dashboard-view',
+            this.setMultiMenu('Dashboards', 'tabler--dashboard', 'dashboard-view',
                 [
                     this.setSubMenu('Dashboard', '/dashboard', 'dashboard-view'),
-                    // Add more sub-menu items as needed
                 ],
             ),
             this.setHeadingMenu('Management & Apps'),
             this.setHeadingMenu('Tools & Sessions'),
-            this.setMultiMenu('Settings', 'ri-settings-5-line', 'Settings',
+            this.setMultiMenu('Settings', 'tabler--settings', 'Settings',
                 [
                     this.setSubMenu('Account ', '/settings/user-account', 'account-view'),
                     this.setSubMenu('Users', '/settings/users', 'users-view'),

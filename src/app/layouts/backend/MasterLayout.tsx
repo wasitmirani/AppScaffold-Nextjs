@@ -23,7 +23,12 @@ export default function MasterLayout({ children }: { children: ReactNode }) {
                                         <div className="wrapper">
                                                 <HeaderMenu />
                                                 <SideBarMenu />
+                                                <div className="page-content">  
+                                                <main>
                                                 {children}
+                                                </main>
+                                                
+                                                </div>
                                         </div>
                                 </body>
                         </html>

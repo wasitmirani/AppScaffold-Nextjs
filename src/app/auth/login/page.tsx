@@ -2,12 +2,18 @@
 
 import { useRouter } from 'next/navigation';
 
+const SESSION_DURATION_MINUTES = Number(process.env.NEXT_PUBLIC_SESSION_DURATION_MINUTES ?? 30);
+const EXPIRY_KEY = 'authExpiry';
+const TOKEN_KEY = 'authToken';
+
 export default function LoginPage() {
   const router = useRouter();
 
   const handleLogin = () => {
     if (typeof window !== 'undefined') {
-      window.localStorage.setItem('authToken', 'demo-token');
+      const expiry = Date.now() + SESSION_DURATION_MINUTES * 60 * 1000;
+      window.localStorage.setItem(TOKEN_KEY, 'demo-token');
+      window.localStorage.setItem(EXPIRY_KEY, String(expiry));
       router.replace('/app/dashboard');
     }
   };
@@ -18,6 +24,9 @@ export default function LoginPage() {
         <h1 className="mb-4 text-2xl font-semibold">Sign in</h1>
         <p className="mb-6 text-sm text-slate-600">
           Use this demo button to authenticate and access the protected app layout.
+        </p>
+        <p className="mb-6 text-xs text-slate-500">
+          Your session will expire after {SESSION_DURATION_MINUTES} minutes.
         </p>
         <button
           onClick={handleLogin}

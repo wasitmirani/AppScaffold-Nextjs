@@ -52,6 +52,15 @@ Ensure you have Node.js installed on your machine.
    bun install
    ```
 
+### Environment Variables
+
+Create a `.env.local` file based on `.env.example` and configure your app settings.
+
+```env
+NEXT_PUBLIC_APP_NAME=Paces
+NEXT_PUBLIC_SESSION_DURATION_MINUTES=30
+```
+
 ### Running the Development Server
 
 Start the development server:

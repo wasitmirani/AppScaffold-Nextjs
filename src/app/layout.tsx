@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import HeadScripts from './layouts/backend/partials/HeadScripts';
 import LayoutSwitcher from './components/LayoutSwitcher';
+import Providers from './providers';
 
 export default function Layout({ children }: { children: ReactNode }) {
   const appName = process.env.NEXT_PUBLIC_APP_NAME || 'Paces';
@@ -16,7 +17,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         <HeadScripts />
       </head>
       <body>
-        <LayoutSwitcher>{children}</LayoutSwitcher>
+        <Providers>
+          <LayoutSwitcher>{children}</LayoutSwitcher>
+        </Providers>
       </body>
     </html>
   );
